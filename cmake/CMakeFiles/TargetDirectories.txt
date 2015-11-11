@@ -1,6 +1,0 @@
-/Users/aaronsheah/Dropbox/Imperial/EE/4thYear/HighPerformanceComputing/hpce-2015-cw4/bin/CMakeFiles/test_opencl.dir
-/Users/aaronsheah/Dropbox/Imperial/EE/4thYear/HighPerformanceComputing/hpce-2015-cw4/bin/CMakeFiles/ALL_BUILD.dir
-/Users/aaronsheah/Dropbox/Imperial/EE/4thYear/HighPerformanceComputing/hpce-2015-cw4/bin/CMakeFiles/ZERO_CHECK.dir
-/Users/aaronsheah/Dropbox/Imperial/EE/4thYear/HighPerformanceComputing/hpce-2015-cw4/bin/CMakeFiles/render_world.dir
-/Users/aaronsheah/Dropbox/Imperial/EE/4thYear/HighPerformanceComputing/hpce-2015-cw4/bin/CMakeFiles/make_world.dir
-/Users/aaronsheah/Dropbox/Imperial/EE/4thYear/HighPerformanceComputing/hpce-2015-cw4/bin/CMakeFiles/step_world.dir
