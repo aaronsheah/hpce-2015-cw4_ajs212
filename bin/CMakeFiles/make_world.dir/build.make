@@ -106,7 +106,7 @@ make_world_EXTERNAL_OBJECTS =
 make_world: CMakeFiles/make_world.dir/src/heat.cpp.o
 make_world: CMakeFiles/make_world.dir/src/make_world.cpp.o
 make_world: CMakeFiles/make_world.dir/build.make
-make_world: ../opencl_sdk/lib/cygwin/x86_64/libOpenCL.a
+make_world: /usr/lib/x86_64-linux-gnu/libOpenCL.so
 make_world: CMakeFiles/make_world.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable make_world"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/make_world.dir/link.txt --verbose=$(VERBOSE)

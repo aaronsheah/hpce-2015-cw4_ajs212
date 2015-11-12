@@ -106,7 +106,7 @@ render_world_EXTERNAL_OBJECTS =
 render_world: CMakeFiles/render_world.dir/src/heat.cpp.o
 render_world: CMakeFiles/render_world.dir/src/render_world.cpp.o
 render_world: CMakeFiles/render_world.dir/build.make
-render_world: ../opencl_sdk/lib/cygwin/x86_64/libOpenCL.a
+render_world: /usr/lib/x86_64-linux-gnu/libOpenCL.so
 render_world: CMakeFiles/render_world.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable render_world"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/render_world.dir/link.txt --verbose=$(VERBOSE)

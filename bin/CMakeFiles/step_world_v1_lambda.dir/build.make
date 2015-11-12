@@ -106,7 +106,7 @@ step_world_v1_lambda_EXTERNAL_OBJECTS =
 step_world_v1_lambda: CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.o
 step_world_v1_lambda: CMakeFiles/step_world_v1_lambda.dir/src/ajs212/step_world_v1_lambda.cpp.o
 step_world_v1_lambda: CMakeFiles/step_world_v1_lambda.dir/build.make
-step_world_v1_lambda: ../opencl_sdk/lib/cygwin/x86_64/libOpenCL.a
+step_world_v1_lambda: /usr/lib/x86_64-linux-gnu/libOpenCL.so
 step_world_v1_lambda: CMakeFiles/step_world_v1_lambda.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable step_world_v1_lambda"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/step_world_v1_lambda.dir/link.txt --verbose=$(VERBOSE)

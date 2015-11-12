@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall -std=c++11 -o2    CMakeFiles/test_opencl.dir/src/heat.cpp.o CMakeFiles/test_opencl.dir/src/test_opencl.cpp.o  -o test_opencl -rdynamic ../opencl_sdk//lib/cygwin/x86_64/libOpenCL.a 
+/usr/bin/c++   -Wall -std=c++11 -o2    CMakeFiles/test_opencl.dir/src/heat.cpp.o CMakeFiles/test_opencl.dir/src/test_opencl.cpp.o  -o test_opencl -rdynamic -lOpenCL 

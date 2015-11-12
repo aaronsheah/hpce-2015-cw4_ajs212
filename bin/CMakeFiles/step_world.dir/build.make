@@ -106,7 +106,7 @@ step_world_EXTERNAL_OBJECTS =
 step_world: CMakeFiles/step_world.dir/src/heat.cpp.o
 step_world: CMakeFiles/step_world.dir/src/step_world.cpp.o
 step_world: CMakeFiles/step_world.dir/build.make
-step_world: ../opencl_sdk/lib/cygwin/x86_64/libOpenCL.a
+step_world: /usr/lib/x86_64-linux-gnu/libOpenCL.so
 step_world: CMakeFiles/step_world.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable step_world"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/step_world.dir/link.txt --verbose=$(VERBOSE)

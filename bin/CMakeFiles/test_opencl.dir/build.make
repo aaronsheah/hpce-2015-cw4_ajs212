@@ -106,7 +106,7 @@ test_opencl_EXTERNAL_OBJECTS =
 test_opencl: CMakeFiles/test_opencl.dir/src/heat.cpp.o
 test_opencl: CMakeFiles/test_opencl.dir/src/test_opencl.cpp.o
 test_opencl: CMakeFiles/test_opencl.dir/build.make
-test_opencl: ../opencl_sdk/lib/cygwin/x86_64/libOpenCL.a
+test_opencl: /usr/lib/x86_64-linux-gnu/libOpenCL.so
 test_opencl: CMakeFiles/test_opencl.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable test_opencl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_opencl.dir/link.txt --verbose=$(VERBOSE)

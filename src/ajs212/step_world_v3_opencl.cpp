@@ -11,6 +11,8 @@
 
 #define __CL_ENABLE_EXCEPTIONS 
 #include "CL/cl.hpp"
+#include <fstream>
+#include <streambuf>
 
 namespace hpce{
 namespace ajs212{
@@ -63,39 +65,29 @@ void kernel_xy(
 	} // end of if(insulator){ ... } else {
 }
 
-void StepWorldV3OpenCL(world_t &world, float dt, unsigned n)
+std::string LoadSource(const char *fileName)
 {
-	unsigned w=world.w, h=world.h;
-	
-	float outer=world.alpha*dt;		// We spread alpha to other cells per time
-	float inner=1-outer/4;				// Anything that doesn't spread stays
-	
-	// This is our temporary working space
-	std::vector<float> buffer(w*h);
+    // TODO : Don't forget to change your_login here
+    std::string baseDir="src/ajs212";
+    if(getenv("HPCE_CL_SRC_DIR")){
+        baseDir=getenv("HPCE_CL_SRC_DIR");
+    }
 
-	for(unsigned t=0;t<n;t++){
-		for(unsigned y=0;y<h;y++){
-			for(unsigned x=0;x<w;x++){
-				kernel_xy(x,y,w,&world.state[0],(const uint32_t *)&world.properties[0],&buffer[0],inner,outer);
-			}  // end of for(x...
-		} // end of for(y...
-		
-		// All cells have now been calculated and placed in buffer, so we replace
-		// the old state with the new state
-		std::swap(world.state, buffer);
-		// Swapping rather than assigning is cheaper: just a pointer swap
-		// rather than a memcpy, so O(1) rather than O(w*h)
-	
-		world.t += dt; // We have moved the world forwards in time
-		
-	} // end of for(t...
+    std::string fullName=baseDir+"/"+fileName;
+
+    // Open a read-only binary stream over the file
+    std::ifstream src(fullName, std::ios::in | std::ios::binary);
+    if(!src.is_open())
+        throw std::runtime_error("LoadSource : Couldn't load cl file from '"+fullName+"'.");
+
+    // Read all characters of the file into a string
+    return std::string(
+        (std::istreambuf_iterator<char>(src)), // Node the extra brackets.
+        std::istreambuf_iterator<char>()
+    );
 }
 
-	
-}; // namespace ajs212
-}; // namepspace hpce
-
-int main(int argc, char *argv[])
+void StepWorldV3OpenCL(world_t &world, float dt, unsigned n)
 {
 	/************************* Choosing a platform *************************/
 	std::vector<cl::Platform> platforms;
@@ -131,7 +123,102 @@ int main(int argc, char *argv[])
 	}
 	/************************************************************************/
 
+	/************************** Creating a Context **************************/
+	cl::Context context(devices);
 
+	std::string kernelSource=LoadSource("step_world_v3_kernel.cl");
+
+	cl::Program::Sources sources;   // A vector of (data,length) pairs
+	sources.push_back(std::make_pair(kernelSource.c_str(), kernelSource.size()+1)); // push on our single string
+
+	cl::Program program(context, sources);
+
+	try{
+		program.build(devices);
+	}catch(...){
+		for(unsigned i=0;i<devices.size();i++){
+			std::cerr<<"Log for device "<<devices[i].getInfo<CL_DEVICE_NAME>()<<":\n\n";
+			std::cerr<<program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(devices[i])<<"\n\n";
+		}
+		throw;
+	}
+	/************************************************************************/
+	// Allocating Buffers
+	size_t cbBuffer=4*world.w*world.h;
+	cl::Buffer buffProperties(context, CL_MEM_READ_ONLY, cbBuffer);
+	cl::Buffer buffState(context, CL_MEM_READ_ONLY, cbBuffer);
+	cl::Buffer buffBuffer(context, CL_MEM_WRITE_ONLY, cbBuffer);
+
+	/************************************************************************/
+
+	unsigned w=world.w, h=world.h;
+	
+	float outer=world.alpha*dt;		// We spread alpha to other cells per time
+	float inner=1-outer/4;				// Anything that doesn't spread stays
+	
+
+	/************************************************************************/
+	// Setting kernel parameters
+	cl::Kernel kernel(program, "kernel_xy");
+
+	kernel.setArg(0, buffState);
+	kernel.setArg(1, buffProperties);
+	kernel.setArg(2, buffBuffer);
+	kernel.setArg(3, inner);
+	kernel.setArg(4, outer);
+
+	/************************************************************************/
+	
+	// Creating a command queue	
+	cl::CommandQueue queue(context,devices[0]);
+
+	// Copying over fixed data
+	queue.enqueueWriteBuffer(buffProperties, CL_TRUE, 0, cbBuffer, &world.properties[0]);
+
+
+	/************************************************************************/
+
+	// This is our temporary working space
+	std::vector<float> buffer(w*h);
+
+	for(unsigned t=0;t<n;t++){
+		// for(unsigned y=0;y<h;y++){
+		// 	for(unsigned x=0;x<w;x++){
+		// 		kernel_xy(x,y,w,&world.state[0],(const uint32_t *)&world.properties[0],&buffer[0],inner,outer);
+		// 	}  // end of for(x...
+		// } // end of for(y...
+
+		cl::NDRange offset(0, 0);               // Always start iterations at x=0, y=0
+		cl::NDRange globalSize(w, h);   // Global size must match the original loops
+		cl::NDRange localSize=cl::NullRange;    // We don't care about local size
+
+		cl::Event evCopiedState;
+		queue.enqueueWriteBuffer(buffState, CL_FALSE, 0, cbBuffer, &world.state[0], NULL, &evCopiedState);
+
+		std::vector<cl::Event> kernelDependencies(1, evCopiedState);
+		cl::Event evExecutedKernel;
+		queue.enqueueNDRangeKernel(kernel, offset, globalSize, localSize, &kernelDependencies, &evExecutedKernel);
+		
+		std::vector<cl::Event> copyBackDependencies(1, evExecutedKernel);
+		queue.enqueueReadBuffer(buffBuffer, CL_TRUE, 0, cbBuffer, &buffer[0], &copyBackDependencies);
+		
+		// All cells have now been calculated and placed in buffer, so we replace
+		// the old state with the new state
+		std::swap(world.state, buffer);
+		// Swapping rather than assigning is cheaper: just a pointer swap
+		// rather than a memcpy, so O(1) rather than O(w*h)
+	
+		world.t += dt; // We have moved the world forwards in time
+		
+	} // end of for(t...
+}
+
+	
+}; // namespace ajs212
+}; // namepspace hpce
+
+int main(int argc, char *argv[])
+{
 	float dt=0.1;
 	unsigned n=1;
 	bool binary=false;
