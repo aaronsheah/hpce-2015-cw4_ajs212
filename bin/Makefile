@@ -181,6 +181,19 @@ step_world_v3_opencl/fast:
 .PHONY : step_world_v3_opencl/fast
 
 #=============================================================================
+# Target rules for targets named step_world_v4_double_buffered
+
+# Build rule for target.
+step_world_v4_double_buffered: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 step_world_v4_double_buffered
+.PHONY : step_world_v4_double_buffered
+
+# fast build rule for target.
+step_world_v4_double_buffered/fast:
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/build
+.PHONY : step_world_v4_double_buffered/fast
+
+#=============================================================================
 # Target rules for targets named test_opencl
 
 # Build rule for target.
@@ -265,6 +278,30 @@ src/ajs212/step_world_v3_opencl.cpp.s:
 	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/ajs212/step_world_v3_opencl.cpp.s
 .PHONY : src/ajs212/step_world_v3_opencl.cpp.s
 
+src/ajs212/step_world_v4_double_buffered.o: src/ajs212/step_world_v4_double_buffered.cpp.o
+.PHONY : src/ajs212/step_world_v4_double_buffered.o
+
+# target to build an object file
+src/ajs212/step_world_v4_double_buffered.cpp.o:
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/src/ajs212/step_world_v4_double_buffered.cpp.o
+.PHONY : src/ajs212/step_world_v4_double_buffered.cpp.o
+
+src/ajs212/step_world_v4_double_buffered.i: src/ajs212/step_world_v4_double_buffered.cpp.i
+.PHONY : src/ajs212/step_world_v4_double_buffered.i
+
+# target to preprocess a source file
+src/ajs212/step_world_v4_double_buffered.cpp.i:
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/src/ajs212/step_world_v4_double_buffered.cpp.i
+.PHONY : src/ajs212/step_world_v4_double_buffered.cpp.i
+
+src/ajs212/step_world_v4_double_buffered.s: src/ajs212/step_world_v4_double_buffered.cpp.s
+.PHONY : src/ajs212/step_world_v4_double_buffered.s
+
+# target to generate assembly for a file
+src/ajs212/step_world_v4_double_buffered.cpp.s:
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/src/ajs212/step_world_v4_double_buffered.cpp.s
+.PHONY : src/ajs212/step_world_v4_double_buffered.cpp.s
+
 src/heat.o: src/heat.cpp.o
 .PHONY : src/heat.o
 
@@ -276,6 +313,7 @@ src/heat.cpp.o:
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/heat.cpp.o
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.o
 .PHONY : src/heat.cpp.o
 
@@ -290,6 +328,7 @@ src/heat.cpp.i:
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/heat.cpp.i
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.i
 .PHONY : src/heat.cpp.i
 
@@ -304,6 +343,7 @@ src/heat.cpp.s:
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/heat.cpp.s
+	$(MAKE) -f CMakeFiles/step_world_v4_double_buffered.dir/build.make CMakeFiles/step_world_v4_double_buffered.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.s
 .PHONY : src/heat.cpp.s
 
@@ -417,6 +457,7 @@ help:
 	@echo "... step_world_v1_lambda"
 	@echo "... step_world_v2_function"
 	@echo "... step_world_v3_opencl"
+	@echo "... step_world_v4_double_buffered"
 	@echo "... test_opencl"
 	@echo "... src/ajs212/step_world_v1_lambda.o"
 	@echo "... src/ajs212/step_world_v1_lambda.i"
@@ -427,6 +468,9 @@ help:
 	@echo "... src/ajs212/step_world_v3_opencl.o"
 	@echo "... src/ajs212/step_world_v3_opencl.i"
 	@echo "... src/ajs212/step_world_v3_opencl.s"
+	@echo "... src/ajs212/step_world_v4_double_buffered.o"
+	@echo "... src/ajs212/step_world_v4_double_buffered.i"
+	@echo "... src/ajs212/step_world_v4_double_buffered.s"
 	@echo "... src/heat.o"
 	@echo "... src/heat.i"
 	@echo "... src/heat.s"

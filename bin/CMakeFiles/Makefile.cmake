@@ -45,5 +45,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/step_world_v1_lambda.dir/DependInfo.cmake"
   "CMakeFiles/step_world_v2_function.dir/DependInfo.cmake"
   "CMakeFiles/step_world_v3_opencl.dir/DependInfo.cmake"
+  "CMakeFiles/step_world_v4_double_buffered.dir/DependInfo.cmake"
   "CMakeFiles/test_opencl.dir/DependInfo.cmake"
   )

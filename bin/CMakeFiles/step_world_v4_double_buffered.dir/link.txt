@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -std=c++11 -o2    CMakeFiles/step_world_v4_double_buffered.dir/src/heat.cpp.o CMakeFiles/step_world_v4_double_buffered.dir/src/ajs212/step_world_v4_double_buffered.cpp.o  -o step_world_v4_double_buffered -rdynamic -lOpenCL 
