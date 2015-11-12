@@ -2,4 +2,5 @@
 /home/admin/HPC/hpce-2015-cw4_ajs212/src/ajs212/CMakeFiles/render_world.dir
 /home/admin/HPC/hpce-2015-cw4_ajs212/src/ajs212/CMakeFiles/step_world.dir
 /home/admin/HPC/hpce-2015-cw4_ajs212/src/ajs212/CMakeFiles/step_world_v1_lambda.dir
+/home/admin/HPC/hpce-2015-cw4_ajs212/src/ajs212/CMakeFiles/step_world_v2_function.dir
 /home/admin/HPC/hpce-2015-cw4_ajs212/src/ajs212/CMakeFiles/test_opencl.dir

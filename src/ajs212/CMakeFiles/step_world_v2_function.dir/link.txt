@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -std=c++11 -o2    CMakeFiles/step_world_v2_function.dir/src/heat.cpp.o CMakeFiles/step_world_v2_function.dir/step_world_v2_function.cpp.o  -o step_world_v2_function -rdynamic ../../opencl_sdk//lib/cygwin/x86_64/libOpenCL.a 

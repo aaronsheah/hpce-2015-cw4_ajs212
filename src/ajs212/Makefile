@@ -155,6 +155,19 @@ step_world_v1_lambda/fast:
 .PHONY : step_world_v1_lambda/fast
 
 #=============================================================================
+# Target rules for targets named step_world_v2_function
+
+# Build rule for target.
+step_world_v2_function: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 step_world_v2_function
+.PHONY : step_world_v2_function
+
+# fast build rule for target.
+step_world_v2_function/fast:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/build
+.PHONY : step_world_v2_function/fast
+
+#=============================================================================
 # Target rules for targets named test_opencl
 
 # Build rule for target.
@@ -176,6 +189,7 @@ src/heat.cpp.o:
 	$(MAKE) -f CMakeFiles/render_world.dir/build.make CMakeFiles/render_world.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/step_world.dir/build.make CMakeFiles/step_world.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.o
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.o
 .PHONY : src/heat.cpp.o
 
@@ -188,6 +202,7 @@ src/heat.cpp.i:
 	$(MAKE) -f CMakeFiles/render_world.dir/build.make CMakeFiles/render_world.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/step_world.dir/build.make CMakeFiles/step_world.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.i
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.i
 .PHONY : src/heat.cpp.i
 
@@ -200,6 +215,7 @@ src/heat.cpp.s:
 	$(MAKE) -f CMakeFiles/render_world.dir/build.make CMakeFiles/render_world.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/step_world.dir/build.make CMakeFiles/step_world.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.s
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.s
 .PHONY : src/heat.cpp.s
 
@@ -323,6 +339,30 @@ step_world_v1_lambda.cpp.s:
 	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/step_world_v1_lambda.cpp.s
 .PHONY : step_world_v1_lambda.cpp.s
 
+step_world_v2_function.o: step_world_v2_function.cpp.o
+.PHONY : step_world_v2_function.o
+
+# target to build an object file
+step_world_v2_function.cpp.o:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/step_world_v2_function.cpp.o
+.PHONY : step_world_v2_function.cpp.o
+
+step_world_v2_function.i: step_world_v2_function.cpp.i
+.PHONY : step_world_v2_function.i
+
+# target to preprocess a source file
+step_world_v2_function.cpp.i:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/step_world_v2_function.cpp.i
+.PHONY : step_world_v2_function.cpp.i
+
+step_world_v2_function.s: step_world_v2_function.cpp.s
+.PHONY : step_world_v2_function.s
+
+# target to generate assembly for a file
+step_world_v2_function.cpp.s:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/step_world_v2_function.cpp.s
+.PHONY : step_world_v2_function.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -335,6 +375,7 @@ help:
 	@echo "... render_world"
 	@echo "... step_world"
 	@echo "... step_world_v1_lambda"
+	@echo "... step_world_v2_function"
 	@echo "... test_opencl"
 	@echo "... src/heat.o"
 	@echo "... src/heat.i"
@@ -354,6 +395,9 @@ help:
 	@echo "... step_world_v1_lambda.o"
 	@echo "... step_world_v1_lambda.i"
 	@echo "... step_world_v1_lambda.s"
+	@echo "... step_world_v2_function.o"
+	@echo "... step_world_v2_function.i"
+	@echo "... step_world_v2_function.s"
 .PHONY : help
 
 
