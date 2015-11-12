@@ -96,16 +96,16 @@ void StepWorldV3OpenCL(world_t &world, float dt, unsigned n)
 	if(platforms.size()==0)
 		throw std::runtime_error("No OpenCL platforms found.");
 
-	std::cerr<<"Found "<<platforms.size()<<" platforms\n";
-	for(unsigned i=0;i<platforms.size();i++){
-		std::string vendor=platforms[i].getInfo<CL_PLATFORM_VENDOR>();
-		std::cerr<<"  Platform "<<i<<" : "<<vendor<<"\n";
-	}
+	// std::cerr<<"Found "<<platforms.size()<<" platforms\n";
+	// for(unsigned i=0;i<platforms.size();i++){
+	// 	std::string vendor=platforms[i].getInfo<CL_PLATFORM_VENDOR>();
+	// 	std::cerr<<"  Platform "<<i<<" : "<<vendor<<"\n";
+	// }
 	int selectedPlatform=0;
 	if(getenv("HPCE_SELECT_PLATFORM")){
 		selectedPlatform=atoi(getenv("HPCE_SELECT_PLATFORM"));
 	}
-	std::cerr<<"Choosing platform "<<selectedPlatform<<"\n";
+	// std::cerr<<"Choosing platform "<<selectedPlatform<<"\n";
 	cl::Platform platform=platforms.at(selectedPlatform);    
 	/************************************************************************/
 
@@ -116,11 +116,11 @@ void StepWorldV3OpenCL(world_t &world, float dt, unsigned n)
 		throw std::runtime_error("No opencl devices found.\n");
 	}
 
-	std::cerr<<"Found "<<devices.size()<<" devices\n";
-	for(unsigned i=0;i<devices.size();i++){
-		std::string name=devices[i].getInfo<CL_DEVICE_NAME>();
-		std::cerr<<"  Device "<<i<<" : "<<name<<"\n";
-	}
+	// std::cerr<<"Found "<<devices.size()<<" devices\n";
+	// for(unsigned i=0;i<devices.size();i++){
+	// 	std::string name=devices[i].getInfo<CL_DEVICE_NAME>();
+	// 	std::cerr<<"  Device "<<i<<" : "<<name<<"\n";
+	// }
 	/************************************************************************/
 
 	/************************** Creating a Context **************************/
@@ -182,11 +182,6 @@ void StepWorldV3OpenCL(world_t &world, float dt, unsigned n)
 	std::vector<float> buffer(w*h);
 
 	for(unsigned t=0;t<n;t++){
-		// for(unsigned y=0;y<h;y++){
-		// 	for(unsigned x=0;x<w;x++){
-		// 		kernel_xy(x,y,w,&world.state[0],(const uint32_t *)&world.properties[0],&buffer[0],inner,outer);
-		// 	}  // end of for(x...
-		// } // end of for(y...
 
 		cl::NDRange offset(0, 0);               // Always start iterations at x=0, y=0
 		cl::NDRange globalSize(w, h);   // Global size must match the original loops
