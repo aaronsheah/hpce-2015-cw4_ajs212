@@ -15,4 +15,4 @@ time (cat /tmp/world.bin | bin/step_world_v3_opencl 0.1 0  1 > /dev/null)
 
 # Measure cost of one step
 time (cat /tmp/world.bin | bin/step_world 0.1 1  1 > /dev/null) 
-time (cat /tmp/world.bin | bin/$USER/step_world_v3_opencl 0.1 1  1 > /dev/null)
+time (cat /tmp/world.bin | bin/step_world_v3_opencl 0.1 1  1 > /dev/null)
