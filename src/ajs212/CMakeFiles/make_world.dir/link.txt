@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -std=c++11 -o2    CMakeFiles/make_world.dir/src/heat.cpp.o CMakeFiles/make_world.dir/src/make_world.cpp.o  -o make_world -rdynamic ../../opencl_sdk//lib/cygwin/x86_64/libOpenCL.a 
