@@ -1,0 +1,4 @@
+/home/admin/HPC/hpce-2015-cw4_ajs212/bin/CMakeFiles/make_world.dir
+/home/admin/HPC/hpce-2015-cw4_ajs212/bin/CMakeFiles/render_world.dir
+/home/admin/HPC/hpce-2015-cw4_ajs212/bin/CMakeFiles/step_world.dir
+/home/admin/HPC/hpce-2015-cw4_ajs212/bin/CMakeFiles/test_opencl.dir
