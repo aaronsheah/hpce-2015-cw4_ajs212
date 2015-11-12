@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -std=c++11 -o2    CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.o CMakeFiles/step_world_v1_lambda.dir/src/ajs212/step_world_v1_lambda.cpp.o  -o step_world_v1_lambda -rdynamic ../opencl_sdk//lib/cygwin/x86_64/libOpenCL.a 

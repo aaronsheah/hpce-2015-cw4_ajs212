@@ -142,6 +142,45 @@ step_world/fast:
 .PHONY : step_world/fast
 
 #=============================================================================
+# Target rules for targets named step_world_v1_lambda
+
+# Build rule for target.
+step_world_v1_lambda: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 step_world_v1_lambda
+.PHONY : step_world_v1_lambda
+
+# fast build rule for target.
+step_world_v1_lambda/fast:
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/build
+.PHONY : step_world_v1_lambda/fast
+
+#=============================================================================
+# Target rules for targets named step_world_v2_function
+
+# Build rule for target.
+step_world_v2_function: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 step_world_v2_function
+.PHONY : step_world_v2_function
+
+# fast build rule for target.
+step_world_v2_function/fast:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/build
+.PHONY : step_world_v2_function/fast
+
+#=============================================================================
+# Target rules for targets named step_world_v3_opencl
+
+# Build rule for target.
+step_world_v3_opencl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 step_world_v3_opencl
+.PHONY : step_world_v3_opencl
+
+# fast build rule for target.
+step_world_v3_opencl/fast:
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/build
+.PHONY : step_world_v3_opencl/fast
+
+#=============================================================================
 # Target rules for targets named test_opencl
 
 # Build rule for target.
@@ -154,6 +193,78 @@ test_opencl/fast:
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/build
 .PHONY : test_opencl/fast
 
+src/ajs212/step_world_v1_lambda.o: src/ajs212/step_world_v1_lambda.cpp.o
+.PHONY : src/ajs212/step_world_v1_lambda.o
+
+# target to build an object file
+src/ajs212/step_world_v1_lambda.cpp.o:
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/ajs212/step_world_v1_lambda.cpp.o
+.PHONY : src/ajs212/step_world_v1_lambda.cpp.o
+
+src/ajs212/step_world_v1_lambda.i: src/ajs212/step_world_v1_lambda.cpp.i
+.PHONY : src/ajs212/step_world_v1_lambda.i
+
+# target to preprocess a source file
+src/ajs212/step_world_v1_lambda.cpp.i:
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/ajs212/step_world_v1_lambda.cpp.i
+.PHONY : src/ajs212/step_world_v1_lambda.cpp.i
+
+src/ajs212/step_world_v1_lambda.s: src/ajs212/step_world_v1_lambda.cpp.s
+.PHONY : src/ajs212/step_world_v1_lambda.s
+
+# target to generate assembly for a file
+src/ajs212/step_world_v1_lambda.cpp.s:
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/ajs212/step_world_v1_lambda.cpp.s
+.PHONY : src/ajs212/step_world_v1_lambda.cpp.s
+
+src/ajs212/step_world_v2_function.o: src/ajs212/step_world_v2_function.cpp.o
+.PHONY : src/ajs212/step_world_v2_function.o
+
+# target to build an object file
+src/ajs212/step_world_v2_function.cpp.o:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/ajs212/step_world_v2_function.cpp.o
+.PHONY : src/ajs212/step_world_v2_function.cpp.o
+
+src/ajs212/step_world_v2_function.i: src/ajs212/step_world_v2_function.cpp.i
+.PHONY : src/ajs212/step_world_v2_function.i
+
+# target to preprocess a source file
+src/ajs212/step_world_v2_function.cpp.i:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/ajs212/step_world_v2_function.cpp.i
+.PHONY : src/ajs212/step_world_v2_function.cpp.i
+
+src/ajs212/step_world_v2_function.s: src/ajs212/step_world_v2_function.cpp.s
+.PHONY : src/ajs212/step_world_v2_function.s
+
+# target to generate assembly for a file
+src/ajs212/step_world_v2_function.cpp.s:
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/ajs212/step_world_v2_function.cpp.s
+.PHONY : src/ajs212/step_world_v2_function.cpp.s
+
+src/ajs212/step_world_v3_opencl.o: src/ajs212/step_world_v3_opencl.cpp.o
+.PHONY : src/ajs212/step_world_v3_opencl.o
+
+# target to build an object file
+src/ajs212/step_world_v3_opencl.cpp.o:
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/ajs212/step_world_v3_opencl.cpp.o
+.PHONY : src/ajs212/step_world_v3_opencl.cpp.o
+
+src/ajs212/step_world_v3_opencl.i: src/ajs212/step_world_v3_opencl.cpp.i
+.PHONY : src/ajs212/step_world_v3_opencl.i
+
+# target to preprocess a source file
+src/ajs212/step_world_v3_opencl.cpp.i:
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/ajs212/step_world_v3_opencl.cpp.i
+.PHONY : src/ajs212/step_world_v3_opencl.cpp.i
+
+src/ajs212/step_world_v3_opencl.s: src/ajs212/step_world_v3_opencl.cpp.s
+.PHONY : src/ajs212/step_world_v3_opencl.s
+
+# target to generate assembly for a file
+src/ajs212/step_world_v3_opencl.cpp.s:
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/ajs212/step_world_v3_opencl.cpp.s
+.PHONY : src/ajs212/step_world_v3_opencl.cpp.s
+
 src/heat.o: src/heat.cpp.o
 .PHONY : src/heat.o
 
@@ -162,6 +273,9 @@ src/heat.cpp.o:
 	$(MAKE) -f CMakeFiles/make_world.dir/build.make CMakeFiles/make_world.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/render_world.dir/build.make CMakeFiles/render_world.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/step_world.dir/build.make CMakeFiles/step_world.dir/src/heat.cpp.o
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.o
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.o
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/heat.cpp.o
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.o
 .PHONY : src/heat.cpp.o
 
@@ -173,6 +287,9 @@ src/heat.cpp.i:
 	$(MAKE) -f CMakeFiles/make_world.dir/build.make CMakeFiles/make_world.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/render_world.dir/build.make CMakeFiles/render_world.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/step_world.dir/build.make CMakeFiles/step_world.dir/src/heat.cpp.i
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.i
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.i
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/heat.cpp.i
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.i
 .PHONY : src/heat.cpp.i
 
@@ -184,6 +301,9 @@ src/heat.cpp.s:
 	$(MAKE) -f CMakeFiles/make_world.dir/build.make CMakeFiles/make_world.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/render_world.dir/build.make CMakeFiles/render_world.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/step_world.dir/build.make CMakeFiles/step_world.dir/src/heat.cpp.s
+	$(MAKE) -f CMakeFiles/step_world_v1_lambda.dir/build.make CMakeFiles/step_world_v1_lambda.dir/src/heat.cpp.s
+	$(MAKE) -f CMakeFiles/step_world_v2_function.dir/build.make CMakeFiles/step_world_v2_function.dir/src/heat.cpp.s
+	$(MAKE) -f CMakeFiles/step_world_v3_opencl.dir/build.make CMakeFiles/step_world_v3_opencl.dir/src/heat.cpp.s
 	$(MAKE) -f CMakeFiles/test_opencl.dir/build.make CMakeFiles/test_opencl.dir/src/heat.cpp.s
 .PHONY : src/heat.cpp.s
 
@@ -294,7 +414,19 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... render_world"
 	@echo "... step_world"
+	@echo "... step_world_v1_lambda"
+	@echo "... step_world_v2_function"
+	@echo "... step_world_v3_opencl"
 	@echo "... test_opencl"
+	@echo "... src/ajs212/step_world_v1_lambda.o"
+	@echo "... src/ajs212/step_world_v1_lambda.i"
+	@echo "... src/ajs212/step_world_v1_lambda.s"
+	@echo "... src/ajs212/step_world_v2_function.o"
+	@echo "... src/ajs212/step_world_v2_function.i"
+	@echo "... src/ajs212/step_world_v2_function.s"
+	@echo "... src/ajs212/step_world_v3_opencl.o"
+	@echo "... src/ajs212/step_world_v3_opencl.i"
+	@echo "... src/ajs212/step_world_v3_opencl.s"
 	@echo "... src/heat.o"
 	@echo "... src/heat.i"
 	@echo "... src/heat.s"
