@@ -1,3 +1,8 @@
+enum cell_flags_t{
+    Cell_Fixed      =0x1,
+    Cell_Insulator  =0x2
+};
+
 __kernel void kernel_xy(
 	__global const float *world_state, __global const uint *world_properties,
 	__global float *buffer, const float inner, const float outer
