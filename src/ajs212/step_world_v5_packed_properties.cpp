@@ -191,7 +191,7 @@ void StepWorldV5Packing(world_t &world, float dt, unsigned n)
 			}
 		}
 	}
-	queue.enqueueWriteBuffer(buffProperties, CL_TRUE, 0, cbBuffer, &world.properties[0]);
+	queue.enqueueWriteBuffer(buffProperties, CL_TRUE, 0, cbBuffer, &packed[0]);
 
 	queue.enqueueWriteBuffer(buffState, CL_TRUE, 0, cbBuffer, &world.state[0]);
 
