@@ -2,6 +2,7 @@ echo '/************************************************************************/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo 'Save output to a file to remove overhead of conversion between bin/debugary and text'
 bin/debug/make_world 1000 0.1 1 > /tmp/world.bin  # Save bin/debugary world to temp file
 
@@ -19,6 +20,8 @@ time (bin/debug/make_world 5000 0.1 1 | bin/debug/step_world_v3_opencl 0.1 1000 
 time (bin/debug/make_world 5000 0.1 1 | bin/debug/step_world_v4_double_buffered 0.1 1000 1 > /dev/null)
 time (bin/debug/make_world 5000 0.1 1 | bin/debug/step_world_v5_packed_properties 0.1 1000 1 > /dev/null)
 =======
+=======
+>>>>>>> origin/master
 =======
 >>>>>>> origin/master
 =======
@@ -52,6 +55,10 @@ time (bin/make_world 5000 0.1 1 | bin/dt10/step_world_v3_opencl 0.1 1000 1 > /de
 time (bin/make_world 5000 0.1 1 | bin/dt10/step_world_v4_double_buffered 0.1 1000 1 > /dev/null)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+time (bin/make_world 5000 0.1 1 | bin/dt10/step_world_v5_packed_properties 0.1 1000 1 > /dev/null)
+>>>>>>> origin/master
+=======
 time (bin/make_world 5000 0.1 1 | bin/dt10/step_world_v5_packed_properties 0.1 1000 1 > /dev/null)
 >>>>>>> origin/master
 =======

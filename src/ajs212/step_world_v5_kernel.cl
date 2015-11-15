@@ -24,10 +24,15 @@ __kernel void kernel_xy(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		uint current_property = world_properties[index];
 
 		// Cell above
 		if(! (current_property & 0x4)) {
+=======
+		// Cell above
+		if(! (world_properties[index-w] & Cell_Insulator)) {
+>>>>>>> origin/master
 =======
 		// Cell above
 		if(! (world_properties[index-w] & Cell_Insulator)) {
@@ -48,7 +53,11 @@ __kernel void kernel_xy(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(! (current_property & 0x8)) {
+=======
+		if(! (world_properties[index+w] & Cell_Insulator)) {
+>>>>>>> origin/master
 =======
 		if(! (world_properties[index+w] & Cell_Insulator)) {
 >>>>>>> origin/master
@@ -66,7 +75,11 @@ __kernel void kernel_xy(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(! (current_property & 0x10)) {
+=======
+		if(! (world_properties[index-1] & Cell_Insulator)) {
+>>>>>>> origin/master
 =======
 		if(! (world_properties[index-1] & Cell_Insulator)) {
 >>>>>>> origin/master
@@ -84,7 +97,11 @@ __kernel void kernel_xy(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(! (current_property & 0x20)) {
+=======
+		if(! (world_properties[index+1] & Cell_Insulator)) {
+>>>>>>> origin/master
 =======
 		if(! (world_properties[index+1] & Cell_Insulator)) {
 >>>>>>> origin/master
