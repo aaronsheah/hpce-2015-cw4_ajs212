@@ -175,17 +175,21 @@ void StepWorldV5Packing(world_t &world, float dt, unsigned n)
 	for (unsigned y = 0; y < h; y++) {
 		for (unsigned x = 0; x < w; x++) {
 			packed[y*h+x] = world.properties[y*h+x];
-			if(packed[y*h+x] ) {
-				if ( packed[y*h+x] ) {
+			if (packed[y*h+x]  & Cell_Fixed || packed[y*h+x]  & Cell_Insulator)
+			{
+				/* code */
+			}
+			else {
+				if ( world.properties[y*h+x-w]  & Cell_Insulator ) {
 					packed[y*h+x]  = packed[y*h+x]  + 4;
 				}
-				if ( packed[y*h+x] ) {
+				if ( world.properties[y*h+x+w]  & Cell_Insulator)   {
 					packed[y*h+x]  = packed[y*h+x]  + 8;
 				}
-				if ( packed[y*h+x] ) {
+				if ( world.properties[y*h+x-1]  & Cell_Insulator)   {
 					packed[y*h+x]  = packed[y*h+x] + 16;
 				}
-				if ( packed[y*h+x] ) {
+				if ( world.properties[y*h+x+1]  & Cell_Insulator)   {
 					packed[y*h+x]  = packed[y*h+x] + 32;
 				}
 			}
